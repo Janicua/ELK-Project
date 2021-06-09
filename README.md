@@ -23,22 +23,21 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The Load balancer encures that work to process incoming traffic will be shared by both vulnerable web servers. Accerss controls will ensure that only authorized users will be able to connect. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file system of the VMs on the network and system metrics.
+- Filebeat: Files beat detects changes tot he filesystem. Specifically, we use it to collect Apache logs.
+- Metricbeat: Metricbeat detects changes in system metrics, such as CPU usage. We use it to detect SSH login attamps, failed sudo escalations, and CPU/RAM statistics. 
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| Web-1    | Web Server         |            |                  |
-| Web-2    |          |            |                  |
-| ELK      |          |            |                  |
+| Jump Box | Gateway    | 10.0.0.1   | Linux       |
+| Web-1    | Web Server |            | Linux       |
+| Web-2    | Web Server |            | Linux       |
+| ELK      | Monitoring |            | Linux       |
 
 ### Access Policies
 
