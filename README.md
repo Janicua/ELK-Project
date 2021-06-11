@@ -11,7 +11,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - _TODO: Enter the playbook file._
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -35,12 +35,12 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway    | 10.0.0.1   | Linux       |
-| Web-1    | Web Server |            | Linux       |
-| Web-2    | Web Server |            | Linux       |
-| ELK      | Monitoring |            | Linux       |
+| Web-1    | Web Server | 10.0.0.5   | Linux       |
+| Web-2    | Web Server | 10.0.0.6   | Linux       |
+| ELK      | Monitoring | 10.2.0.4   | Linux       |
 
 ### Access Policies
-
+a
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the HOST machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
