@@ -50,13 +50,12 @@ Only the HOST machine can accept connections from the Internet. Access to this m
 - 10.2.0.4
 - 136.49.49.225
 Machines within the network can only be accessed by 136.49.49.225.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
+| Jump Box | Yes                 | 10.0.0.5/10.0.0.6    |
 |          |                     |                      |
 |          |                     |                      |
 
