@@ -49,7 +49,8 @@ Only the HOST machine can accept connections from the Internet. Access to this m
 - 10.0.0.6
 - 10.2.0.4
 - 136.49.49.225
-Machines within the network can only be accessed by 136.49.49.225.
+
+- Machines within the network can only be accessed by 136.49.49.225.
 
 A summary of the access policies in place can be found in the table below.
 
