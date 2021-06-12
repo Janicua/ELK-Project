@@ -34,7 +34,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway    | 10.0.0.7   | Linux       |
+| Jump Box | Gateway    | 10.0.0.7/20.85.240.157  | Linux |
 | Web-1    | Web Server | 10.0.0.5   | Linux       |
 | Web-2    | Web Server | 10.0.0.6   | Linux       |
 | ELK      | Monitoring | 10.2.0.4   | Linux       |
@@ -44,7 +44,7 @@ a
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the HOST machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 10.0.0.7
+- 10.0.0.7/20.85.240.157
 - 10.0.0.5
 - 10.0.0.6
 - 10.2.0.4
@@ -56,7 +56,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
+| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
 |          |                     |                      |
 |          |                     |                      |
 
@@ -75,29 +75,30 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![image](https://user-images.githubusercontent.com/79546857/121783542-d24f7680-cb74-11eb-9767-a3900550e127.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- 10.0.0.5
+- 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+-Filebeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-Filebeat can be used to collet, parse, and visualize ELK logs in a single command. By taking raw log files, Kibana projects the Filebeat data from both virtual machines in order to monitor them. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- SSH into Jump-Box (ssh RedAdmin@20.85.240.157)
+- Run sudo docker container list -a
+- Run sudo docker container start priceless_diffie
+- Run sudo docker container attach priceless_diffie (root@714b61654e17)
+- Cd into /etc/ansible*
+- Copy the filebeat-config.yml file to files. (after edits)
+- Update the host file to include the ELK machine as well as 10.0.0.5 and 10.0.0.6
+- Run the playbook, and navigate to Kibana (with the correct corresponging IP address) to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files
