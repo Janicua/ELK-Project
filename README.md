@@ -82,7 +82,7 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.6
 
 We have installed the following Beats on these machines:
--Filebeat
+- Filebeat
 
 These Beats allow us to collect the following information from each machine:
 -Filebeat can be used to collet, parse, and visualize ELK logs in a single command. By taking raw log files, Kibana projects the Filebeat data from both virtual machines in order to monitor them. 
